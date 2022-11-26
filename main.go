@@ -57,11 +57,19 @@ func play(input ArenaUpdate) (response string) {
 	log.Printf("%i", y)
 	log.Printf("%v", d)
 
-	if (x != 0 || y !=0) {
+	if (x != 0) {
 		if (d == "S" || d == "E") {
 	    return "R"
 		} else {
 			return "F"
+		}
+	}
+
+	if (y != 0) {
+		if (d == "N") {
+	    return "F"
+		} else {
+			return "R"
 		}
 	}
 
