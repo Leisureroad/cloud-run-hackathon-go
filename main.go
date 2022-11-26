@@ -48,9 +48,9 @@ func play(input ArenaUpdate) (response string) {
 	// r := reflect.ValueOf(input)
 	// f := reflect.Indirect(r).FieldByName("Arena")
 	// log.Printf("value: ", input.Arena.State["PlayerState"].X)
-	x :=input.Arena.State["https://foo.com"].X
-	y :=input.Arena.State["https://foo.com"].Y
-	d :=input.Arena.State["https://foo.com"].Direction
+	x :=input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].X
+	y :=input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].Y
+	d :=input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].Direction
 
 	// direction :=input.Arena.State["PlayerState"].Direction
 	log.Printf("%i", x)
