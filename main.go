@@ -63,7 +63,7 @@ func play(input ArenaUpdate) (response string) {
 
 	s :=input.Arena.State
 	x_max :=input.Arena.Dimensions[0]
-	y_max :=input.Area.Dimensions[1]
+	y_max :=input.Arena.Dimensions[1]
 	for playerUrl, playerState := range s {
       fmt.Println("playerUrl:", playerUrl, "=>", "playerState:", playerState)
 			px :=playerState.X
