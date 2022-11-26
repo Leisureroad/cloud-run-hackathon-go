@@ -70,8 +70,8 @@ func play(input ArenaUpdate) (response string) {
 			py :=playerState.Y
 		  xw := x-px
 			xe := px-x
-			ys := y-py
-			yn := py - y
+			ys := py-y
+			yn := y-py
 
 			if (xw == 1 && ys == 0) {
 			  west = 1
