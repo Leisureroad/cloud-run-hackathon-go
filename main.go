@@ -4,9 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-	rand2 "math/rand"
+	// rand2 "math/rand"
 	"net/http"
 	"os"
+	// "reflect"
 )
 
 func main() {
@@ -42,13 +43,43 @@ func handler(w http.ResponseWriter, req *http.Request) {
 }
 
 func play(input ArenaUpdate) (response string) {
-	log.Printf("IN: %#v", input)
+	// log.Printf("IN: %#v", input)
 
-	commands := []string{"T", "F"}
-	rand := rand2.Intn(4)
+	// r := reflect.ValueOf(input)
+	// f := reflect.Indirect(r).FieldByName("Arena")
+	// log.Printf("value: ", input.Arena.State["PlayerState"].X)
+	x :=input.Arena.State["https://foo.com"].X
+	y :=input.Arena.State["https://foo.com"].Y
+	d :=input.Arena.State["https://foo.com"].Direction
+
+	// direction :=input.Arena.State["PlayerState"].Direction
+	log.Printf("%i", x)
+	log.Printf("%i", y)
+	log.Printf("%v", d)
+
+	if (x != 0 || y !=0) {
+		if (d == "S" || d == "E") {
+	    return "R"
+		} else {
+			return "F"
+		}
+	}
+
+	if (d == "E" ) {
+	  return "T"
+	} else {
+		return "R"
+	}
+
+	// log.Printf("%v", f)
+
+	// log.Printf("X: %#v", input.Arena.State.PlayerState["X"])
+
+	// commands := []string{"T", "F"}
+	// rand := rand2.Intn(2)
 
 
 	// TODO add your implementation here to replace the random response
-	return commands[rand]
+	// return commands[rand]
 	// return "T"
 }
