@@ -102,7 +102,7 @@ func play(input ArenaUpdate) (response string) {
 		return "R"
 	}
 
-	if (west == 1 && && d == "W") {
+	if (west == 1 && d == "W") {
 		return "T"
 	} else if (east == 1 && d == "E") {
 		return "T"
