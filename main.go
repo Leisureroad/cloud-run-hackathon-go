@@ -48,31 +48,63 @@ func play(input ArenaUpdate) (response string) {
 	// r := reflect.ValueOf(input)
 	// f := reflect.Indirect(r).FieldByName("Arena")
 	// log.Printf("value: ", input.Arena.State["PlayerState"].X)
-	// x :=input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].X
-	// y :=input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].Y
-	// d :=input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].Direction
-	//
-	//
-	// // direction :=input.Arena.State["PlayerState"].Direction
-	// log.Printf("%i", x)
-	// log.Printf("%i", y)
-	// log.Printf("%v", d)
-  // var xm int
-  // var ym int
-	// s :=input.Arena.State
-	// for playerUrl, playerState := range s {
-	//         fmt.Println("playerUrl:", playerUrl, "=>", "playerState:", playerState)
-	// 				px :=playerState.X
-	// 				py :=playerState.Y
-	// 				if (x-px == 1) {
-	// 				  xm = 1
-	// 					log.Printf("%v", xm)
-	// 			  }
-	// 				if (y-py == 1) {
-	// 					ym = 1
-	// 					log.Printf("%v", ym)
-	// 				}
-	//     }
+	x :=input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].X
+	y :=input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].Y
+	d :=input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].Direction
+
+	// direction :=input.Arena.State["PlayerState"].Direction
+	log.Printf("%i", x)
+	log.Printf("%i", y)
+	log.Printf("%v", d)
+  var xw int
+	var xe int
+  var ys int
+	var yn int
+
+	s :=input.Arena.State
+	x_max :=input.Arena.Dimensions[0]
+	y_max :=input.Area.Dimensions[1]
+	for playerUrl, playerState := range s {
+      fmt.Println("playerUrl:", playerUrl, "=>", "playerState:", playerState)
+			px :=playerState.X
+			py :=playerState.Y
+			if (x-px == 1) {
+			  xw = 1
+				log.Printf("%v", xw)
+		  }
+			if (px-x == 1) {
+				xe = 1
+				log.Printf("%v", xe)
+			}
+			if (y-py == 1) {
+				ys = 1
+				log.Printf("%v", ys)
+			}
+			if (py - y == 1) {
+				yn = 1
+				log.Printf("%v", yn)
+			}
+	}
+
+	if (y == y_max) {
+		return "R"
+	}
+	if (x == x_max) {
+		return "R"
+	}
+
+	if (xw == 1 && d == "W") {
+		return "T"
+	} else if (xe == 1 && d == "E") {
+		return "T"
+	} else if (ys == 1 && d == "S") {
+		return "T"
+	} else if (yn == 1 && d == "N") {
+		return "T"
+	} else {
+		return "F"
+	}
+
 	// if (x != 0) {
 	// 	if (d == "S" || d == "E") {
 	//     return "R"
@@ -107,11 +139,11 @@ func play(input ArenaUpdate) (response string) {
 
 	// log.Printf("X: %#v", input.Arena.State.PlayerState["X"])
 
-	commands := []string{"L", "R", "T", "F"}
-	rand := rand2.Intn(4)
-
-
-	// TODO add your implementation here to replace the random response
-	return commands[rand]
+	// commands := []string{"L", "R", "T", "F"}
+	// rand := rand2.Intn(4)
+	//
+	//
+	// // TODO add your implementation here to replace the random response
+	// return commands[rand]
 	// return "T"
 }
