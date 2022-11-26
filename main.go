@@ -65,21 +65,13 @@ func play(input ArenaUpdate) (response string) {
 	x_max :=input.Arena.Dimensions[0]
 	y_max :=input.Arena.Dimensions[1]
 	for playerUrl, playerState := range s {
-      fmt.Println("playerUrl:", playerUrl, "=>", "playerState:", playerState)
+      // fmt.Println("playerUrl:", playerUrl, "=>", "playerState:", playerState)
 			px :=playerState.X
 			py :=playerState.Y
-
 		  xw := x-px
-			// log.Printf("%v", xw)
-
 			xe := px-x
-			// log.Printf("%v", xe)
-
 			ys := y-py
-			// log.Printf("%v", ys)
-
 			yn := py - y
-			// log.Printf("%v", yn)
 
 			if (xw == 1 && ys == 0) {
 			  west = 1
@@ -96,28 +88,28 @@ func play(input ArenaUpdate) (response string) {
 	}
 
 	if (y == y_max-1) {
-		log.Printf("R")
+		log.Printf("y_max: R")
 		return "R"
 	}
 	if (x == x_max-1) {
-		log.Printf("R")
+		log.Printf("x_max: R")
 		return "R"
 	}
 
 	if (west == 1 && d == "W") {
-		log.Printf("T")
+		log.Printf("west: T")
 		return "T"
 	} else if (east == 1 && d == "E") {
-		log.Printf("T")
+		log.Printf("east: T")
 		return "T"
 	} else if (south == 1 && d == "S") {
-		log.Printf("T")
+		log.Printf("south: T")
 		return "T"
 	} else if (north == 1 && d == "N") {
-		log.Printf("T")
+		log.Printf("north: T")
 		return "T"
 	} else {
-		log.Printf("F")
+		log.Printf("blank: F")
 		return "F"
 	}
 
