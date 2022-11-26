@@ -76,6 +76,8 @@ func play(input ArenaUpdate) (response string) {
 	if (x != 0) {
 		if (d == "S" || d == "E") {
 	    return "R"
+		} else if (d == "N") {
+			return "F"
 		} else {
 			if (xm == 1) {
 				return "R"
