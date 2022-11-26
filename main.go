@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-	// rand2 "math/rand"
+	rand2 "math/rand"
 	"net/http"
 	"os"
 	// "reflect"
@@ -43,7 +43,7 @@ func handler(w http.ResponseWriter, req *http.Request) {
 }
 
 func play(input ArenaUpdate) (response string) {
-	// log.Printf("IN: %#v", input)
+	log.Printf("IN: %#v", input)
 
 	// r := reflect.ValueOf(input)
 	// f := reflect.Indirect(r).FieldByName("Arena")
