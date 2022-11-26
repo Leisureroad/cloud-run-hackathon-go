@@ -43,7 +43,7 @@ func handler(w http.ResponseWriter, req *http.Request) {
 }
 
 func play(input ArenaUpdate) (response string) {
-	log.Printf("IN: %#v", input)
+	// log.Printf("IN: %#v", input)
 
 	// r := reflect.ValueOf(input)
 	// f := reflect.Indirect(r).FieldByName("Arena")
@@ -98,8 +98,16 @@ func play(input ArenaUpdate) (response string) {
 		log.Printf("y_max: R")
 		return "R"
 	}
+	if (y == 0 && d == "N") {
+		log.Printf("y_0: R")
+		return "R"
+	}
 	if (x == x_max-1 && d == "E") {
 		log.Printf("x_max: R")
+		return "R"
+	}
+	if (x == 0 && d == "W") {
+		log.Printf("x_0: R")
 		return "R"
 	}
 
