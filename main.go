@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-	rand2 "math/rand"
+	// rand2 "math/rand"
 	"net/http"
 	"os"
 	// "reflect"
@@ -105,7 +105,7 @@ func play(input ArenaUpdate) (response string) {
 			log.Printf("wasHit blank: L")
 			return "L"
 		}
-		// 
+		//
 		// commands := []string{"F", "R"}
 		// rand := rand2.Intn(2)
 		// log.Printf("wasHit: %v", commands[rand])
