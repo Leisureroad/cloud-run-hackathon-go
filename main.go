@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
-	// rand2 "math/rand"
+	rand2 "math/rand"
 	"net/http"
 	"os"
 	// "reflect"
@@ -51,7 +51,7 @@ func play(input ArenaUpdate) (response string) {
 	x :=input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].X
 	y :=input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].Y
 	d :=input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].Direction
-
+	wasHit := input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].WasHit
 	// direction :=input.Arena.State["PlayerState"].Direction
 	// log.Printf("%i", x)
 	// log.Printf("%i", y)
@@ -87,6 +87,13 @@ func play(input ArenaUpdate) (response string) {
 			}
 	}
 
+  if (wasHit == true) {
+		commands := []string{"F", "R"}
+		rand := rand2.Intn(2)
+		log.Printf("wasHit: %v", commands[rand])
+		return commands[rand]
+	}
+	
 	if (y == y_max-1) {
 		log.Printf("y_max: R")
 		return "R"
