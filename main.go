@@ -118,8 +118,8 @@ func play(input ArenaUpdate) (response string) {
 			log.Printf("north: F")
 			return "F"
 		} else {
-			log.Printf("wasHit blank: L")
-			return "L"
+			log.Printf("wasHit blank: R")
+			return "R"
 		}
 		//
 		// commands := []string{"F", "R"}
