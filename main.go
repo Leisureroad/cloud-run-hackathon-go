@@ -53,9 +53,9 @@ func play(input ArenaUpdate) (response string) {
 	d :=input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].Direction
 
 	// direction :=input.Arena.State["PlayerState"].Direction
-	log.Printf("%i", x)
-	log.Printf("%i", y)
-	log.Printf("%v", d)
+	// log.Printf("%i", x)
+	// log.Printf("%i", y)
+	// log.Printf("%v", d)
   var west int
 	var east int
 	var south int
@@ -70,16 +70,16 @@ func play(input ArenaUpdate) (response string) {
 			py :=playerState.Y
 
 		  xw := x-px
-			log.Printf("%v", xw)
+			// log.Printf("%v", xw)
 
 			xe := px-x
-			log.Printf("%v", xe)
+			// log.Printf("%v", xe)
 
 			ys := y-py
-			log.Printf("%v", ys)
+			// log.Printf("%v", ys)
 
 			yn := py - y
-			log.Printf("%v", yn)
+			// log.Printf("%v", yn)
 
 			if (xw == 1 && ys == 0) {
 			  west = 1
@@ -96,21 +96,28 @@ func play(input ArenaUpdate) (response string) {
 	}
 
 	if (y == y_max-1) {
+		log.Printf("R")
 		return "R"
 	}
 	if (x == x_max-1) {
+		log.Printf("R")
 		return "R"
 	}
 
 	if (west == 1 && d == "W") {
+		log.Printf("T")
 		return "T"
 	} else if (east == 1 && d == "E") {
+		log.Printf("T")
 		return "T"
 	} else if (south == 1 && d == "S") {
+		log.Printf("T")
 		return "T"
 	} else if (north == 1 && d == "N") {
+		log.Printf("T")
 		return "T"
 	} else {
+		log.Printf("F")
 		return "F"
 	}
 
