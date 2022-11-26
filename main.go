@@ -90,15 +90,31 @@ func play(input ArenaUpdate) (response string) {
   if (wasHit == true) {
 
 		if (west != 1 && d == "W") {
+			if (x == 0 && d == "W") {
+				log.Printf("wasHit x_0: R")
+				return "R"
+			}
 			log.Printf("west: F")
 			return "F"
 		} else if (east != 1 && d == "E") {
+			if (x == x_max-1 && d == "E") {
+				log.Printf("wasHit x_max: R")
+				return "R"
+			}
 			log.Printf("east: F")
 			return "F"
 		} else if (south != 1 && d == "S") {
+			if (y == y_max-1 && d == "S") {
+				log.Printf("wasHit y_max: R")
+				return "R"
+			}
 			log.Printf("south: F")
 			return "F"
 		} else if (north != 1 && d == "N") {
+			if (y == 0 && d == "N") {
+				log.Printf("wasHit y_0: R")
+				return "R"
+			}
 			log.Printf("north: F")
 			return "F"
 		} else {
