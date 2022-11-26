@@ -52,15 +52,34 @@ func play(input ArenaUpdate) (response string) {
 	y :=input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].Y
 	d :=input.Arena.State["https://cloud-run-hackathon-go-pkqx6rxn2q-uc.a.run.app"].Direction
 
+
 	// direction :=input.Arena.State["PlayerState"].Direction
 	log.Printf("%i", x)
 	log.Printf("%i", y)
 	log.Printf("%v", d)
-
+  var xm int
+  var ym int
+	s :=input.Arena.State
+	for playerUrl, playerState := range s {
+	        fmt.Println("playerUrl:", playerUrl, "=>", "playerState:", playerState)
+					px :=playerState.X
+					py :=playerState.Y
+					if (x-px == 1) {
+					  xm = 1
+						log.Printf("%v", xm)
+				  }
+					if (y-py == 1) {
+						ym = 1
+						log.Printf("%v", ym)
+					}
+	    }
 	if (x != 0) {
 		if (d == "S" || d == "E") {
 	    return "R"
 		} else {
+			if (xm == 1) {
+				return "R"
+			}
 			return "F"
 		}
 	}
