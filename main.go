@@ -93,12 +93,12 @@ func play(input ArenaUpdate) (response string) {
 		log.Printf("wasHit: %v", commands[rand])
 		return commands[rand]
 	}
-	
-	if (y == y_max-1) {
+
+	if (y == y_max-1 && d == "S") {
 		log.Printf("y_max: R")
 		return "R"
 	}
-	if (x == x_max-1) {
+	if (x == x_max-1 && d == "E") {
 		log.Printf("x_max: R")
 		return "R"
 	}
