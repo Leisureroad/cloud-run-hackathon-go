@@ -80,7 +80,11 @@ func play(input ArenaUpdate) (response string) {
 			return "F"
 		} else {
 			if (xm == 1) {
-				return "R"
+				if (y==0) {
+					return "L"
+				} else {
+			    return "R"
+				}
 			}
 			return "F"
 		}
