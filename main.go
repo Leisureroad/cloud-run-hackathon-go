@@ -88,10 +88,28 @@ func play(input ArenaUpdate) (response string) {
 	}
 
   if (wasHit == true) {
-		commands := []string{"F", "R"}
-		rand := rand2.Intn(2)
-		log.Printf("wasHit: %v", commands[rand])
-		return commands[rand]
+
+		if (west != 1 && d == "W") {
+			log.Printf("west: F")
+			return "F"
+		} else if (east != 1 && d == "E") {
+			log.Printf("east: F")
+			return "F"
+		} else if (south != 1 && d == "S") {
+			log.Printf("south: F")
+			return "F"
+		} else if (north != 1 && d == "N") {
+			log.Printf("north: F")
+			return "F"
+		} else {
+			log.Printf("wasHit blank: L")
+			return "L"
+		}
+		// 
+		// commands := []string{"F", "R"}
+		// rand := rand2.Intn(2)
+		// log.Printf("wasHit: %v", commands[rand])
+		// return commands[rand]
 	}
 
 	if (y == y_max-1 && d == "S") {
