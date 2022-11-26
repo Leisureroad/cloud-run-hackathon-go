@@ -81,13 +81,17 @@ func play(input ArenaUpdate) (response string) {
 		} else if (xm == 1 && y!= 0) {
 			    return "R"
 		} else {
-			return "F"
+			commands := []string{"T", "F"}
+			rand := rand2.Intn(2)
+			return commands[rand]
 		}
 	}
 
 	if (y != 0) {
 		if (d == "N") {
-	    return "F"
+			commands := []string{"T", "F"}
+			rand := rand2.Intn(2)
+			return commands[rand]
 		} else {
 			return "R"
 		}
