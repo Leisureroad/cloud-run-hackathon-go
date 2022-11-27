@@ -157,6 +157,9 @@ func play(input ArenaUpdate) (response string) {
 	} else if (north == 1 && d == "N") {
 		log.Printf("north: T")
 		return "T"
+	} else if (west == 1 || east == 1 || south == 1 || north == 1){
+		log.Printf("turn : R")
+		return "R"
 	} else {
 		log.Printf("blank: F")
 		return "F"
