@@ -73,16 +73,16 @@ func play(input ArenaUpdate) (response string) {
 			ys := py-y
 			yn := y-py
 
-			if (xw == 1 && ys == 0) {
+			if (xw >= 1 && ys == 0) {
 			  west = 1
 			}
-			if (xe == 1 && ys == 0) {
+			if (xe >= 1 && ys == 0) {
 			  east = 1
 			}
-			if (ys == 1 && xw == 0) {
+			if (ys >= 1 && xw == 0) {
 			  south = 1
 			}
-			if (yn == 1 && xw == 0) {
+			if (yn >= 1 && xw == 0) {
 			  north = 1
 			}
 	}
